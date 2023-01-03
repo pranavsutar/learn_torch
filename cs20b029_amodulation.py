@@ -9,19 +9,19 @@ modulator = am * np.sin(2 * np.pi * fm * time) # Am * cos(2*pi*fm*t)
 amodulation = (ac + modulator) * np.sin(2 * np.pi * fc * time) # Am = (Ac + m(t)) * cos(2*pi*fc*t)
 
 plt.subplot(3, 1, 1)
-plt.plot(time, carrier)
+plt.plot(time, carrier, 'b')
 plt.title('Carrier')
 plt.xlabel('Time')
 plt.ylabel('Amplitude')
 
 plt.subplot(3, 1, 2)
-plt.plot(time, modulator)
+plt.plot(time, modulator, 'r')
 plt.title('Modulator')
 plt.xlabel('Time')
 plt.ylabel('Amplitude')
 
 plt.subplot(3, 1, 3)
-plt.plot(time, amodulation)
+plt.plot(time, amodulation, 'g')
 plt.title('AModulation')
 plt.xlabel('Time')
 plt.ylabel('Amplitude')
@@ -30,3 +30,6 @@ plt.tight_layout()
 # set the whole title to "AM_CNlab1"
 plt.suptitle('AM_CNlab1')
 plt.show()
+
+# save figure
+plt.savefig('cs20b029_amodulation.png')
