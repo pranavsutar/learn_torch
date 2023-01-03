@@ -1,13 +1,12 @@
 print('cs20b029')
 import numpy as np, matplotlib.pyplot as plt
 
-time = np.linspace(0, 1, 1000)
-print(time)
-am = 5; ac= 10; fm = 3; fc = 40
-carrier = ac * np.sin(2 * np.pi * fc * time)
-modulator = am * np.sin(2 * np.pi * fm * time)
+time = np.linspace(0, 1, 1000)            # time vector
+am = 5; ac= 9; fm = 2.5; fc = 35            # amplitude and frequency of modulator and carrier
+carrier = ac * np.sin(2 * np.pi * fc * time) # Ac * cos(2*pi*fc*t)
+modulator = am * np.sin(2 * np.pi * fm * time) # Am * cos(2*pi*fm*t)
 # Amplitude Modulation
-amodulation = (ac + modulator) * np.sin(2 * np.pi * fc * time)
+amodulation = (ac + modulator) * np.sin(2 * np.pi * fc * time) # Am = (Ac + m(t)) * cos(2*pi*fc*t)
 
 plt.subplot(3, 1, 1)
 plt.plot(time, carrier)
@@ -31,7 +30,3 @@ plt.tight_layout()
 # set the whole title to "AM_CNlab1"
 plt.suptitle('AM_CNlab1')
 plt.show()
-
-
-# sudo update-alternatives --install /usr/bin/python python /usr/bin/python3 10 
-# used to change the default python version to python3
